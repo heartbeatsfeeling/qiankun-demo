@@ -10,7 +10,7 @@
     "install:order": "cd ./order-app && npm install",
     "install:user": "cd ./user-app && npm install",
     "build": "npm-run-all --parallel build:*",
-    "build:main": "cd ./main && npm run build",
+    "build:main": "cd ./main-app && npm run build",
     "build:order": "cd ./order-app && npm run build",
     "build:user": "cd ./user-app && npm run build"
   },

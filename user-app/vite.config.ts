@@ -7,6 +7,9 @@ export default defineConfig({
     vue(),
     qiankun('user-app', { useDevMode: true })
   ],
+  build: {
+    outDir: '../dist/user-app'
+  },
   server: {
     port: 5175,
     cors: true,

@@ -7,6 +7,9 @@ export default defineConfig({
     vue(),
     qiankun('order-app', { useDevMode: true })
   ],
+  build: {
+    outDir: '../dist/order-app'
+  },
   server: {
     port: 5174,
     cors: true,
