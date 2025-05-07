@@ -1,0 +1,21 @@
+{
+  "name": "qiankun-main-app",
+  "scripts": {
+    "serve": "npm-run-all --parallel start:*",
+    "start:main": "cd ./main-app && vite --open",
+    "start:order": "cd ./order-app && vite",
+    "start:user": "cd ./user-app && vite",
+    "install": "npm-run-all --parallel install:*",
+    "install:main": "cd ./main-app && npm install",
+    "install:order": "cd ./order-app && npm install",
+    "install:user": "cd ./user-app && npm install",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "cd ./main && npm run build",
+    "build:order": "cd ./order-app && npm run build",
+    "build:user": "cd ./user-app && npm run build"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "vite": "^6.3.5"
+  }
+}
