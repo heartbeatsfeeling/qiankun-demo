@@ -13,7 +13,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import Lnb from './components/Lnb.vue'
+import Lnb from './components/lnbc.vue'
 
 const orderUrl = ref(import.meta.env.VITE_ORDER_APP_URL)
 const userUrl = ref(import.meta.env.VITE_USER_APP_URL)
