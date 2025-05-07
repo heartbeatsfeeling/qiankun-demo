@@ -15,6 +15,6 @@ const routes = [{
 }]
 
 export const router = createRouter({
-  history: createWebHistory(qiankunWindow.__POWERED_BY_QIANKUN__ ? '/user' : '/'),
+  history: createWebHistory(qiankunWindow.__POWERED_BY_QIANKUN__ ? '/user-app' : '/'),
   routes
 });

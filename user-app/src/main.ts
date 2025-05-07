@@ -12,7 +12,6 @@ renderWithQiankun({
   unmount () { root.unmount() },
   update () { }
 })
-
 // 独立运行时
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
   render({})
@@ -22,7 +21,6 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
 function render (props: any) {
   const { container } = props
   root = createApp(app)
-
   const dom = container ? container.querySelector('#app') : document.getElementById('app')
   root.use(router).mount(dom)
 }

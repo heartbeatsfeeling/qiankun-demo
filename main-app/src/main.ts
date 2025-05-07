@@ -11,14 +11,14 @@ registerMicroApps([
     name: 'order-app',
     entry: import.meta.env.VITE_ORDER_APP_URL,
     container: '#subapp-viewport',
-    activeRule: '/order',
+    activeRule: '/order-app',
     props
   },
   {
     name: 'user-app',
     entry: import.meta.env.VITE_USER_APP_URL,
     container: '#subapp-viewport',
-    activeRule: '/user',
+    activeRule: '/user-app',
     props
   }
 ])

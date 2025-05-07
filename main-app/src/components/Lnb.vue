@@ -26,29 +26,29 @@ import { useRoute } from 'vue-router'
 const routeList = [
   {
     name: '订单应用',
-    path: '/order/',
+    path: '/order-app/',
     children: [
       {
         name: '订单应用Home',
-        path: '/order/home',
+        path: '/order-app/home',
       },
       {
         name: '订单应用About',
-        path: '/order/about',
+        path: '/order-app/about',
       },
     ],
   },
   {
     name: '用户应用',
-    path: '/user/',
+    path: '/user-app/',
     children: [
       {
         name: '用户应用Home',
-        path: '/user/home',
+        path: '/user-app/home',
       },
       {
         name: '用户应用About',
-        path: '/user/about',
+        path: '/user-app/about',
       },
     ],
   },
