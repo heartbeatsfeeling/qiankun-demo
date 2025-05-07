@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import qiankun from 'vite-plugin-qiankun'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/user-app/' :   '/',
   plugins: [
     vue(),
     qiankun('user-app', { useDevMode: true })
