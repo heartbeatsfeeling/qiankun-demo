@@ -25,6 +25,6 @@ function render (props: any) {
   const { container } = props
   root = createApp(app)
   const dom = container ? container.querySelector('#app') : '#app'
-  console.log(container, dom)
+  console.log(document.documentElement.innerHTML)
   root.use(router).mount(dom)
 }
