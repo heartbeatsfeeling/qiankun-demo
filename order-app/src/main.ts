@@ -13,7 +13,6 @@ renderWithQiankun({
   update () { }
 })
 
-console.log(qiankunWindow.__POWERED_BY_QIANKUN__)
 // 独立运行时
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
   render({})
@@ -23,7 +22,7 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
 function render (props: any) {
   const { container } = props
   root = createApp(app)
-  console.log(container)
   const dom = container ? container.querySelector('#app') : document.getElementById('app')
+  console.log(dom)
   root.use(router).mount(dom)
 }
