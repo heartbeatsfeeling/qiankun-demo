@@ -9,7 +9,9 @@ let root: App
 renderWithQiankun({
   mount (props: any) { render(props) },
   bootstrap () {},
-  unmount () { root.unmount() },
+  unmount () { 
+    console.log('unmount')
+    root.unmount() },
   update () { }
 })
 
