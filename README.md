@@ -24,31 +24,31 @@ npm run build:user
 ```
 server {
     listen 80;
-    server_name main.com;
+    server_name micro.main.16wa.com;
 
     location = /favicon.ico {
-        root dist/main-app;
+        root /home/ubuntu/micro/dist/main-app;
     }
 
     # 代理 /order-app/assets 到实际文件路径
     location /order-app/assets {
-        alias dist/order-app/assets;
+        alias /home/ubuntu/micro/dist/order-app/assets;
     }
 
     # 代理 /user-app/assets 到实际文件路径
     location /user-app/assets {
-        alias dist/user-app/assets;
+        alias /home/ubuntu/micro/dist/user-app/assets;
     }
 
     location / {
-        root dist/main-app;
+        root /home/ubuntu/micro/dist/main-app;
         try_files $uri $uri/ /index.html;
 
         # 动态设置 Access-Control-Allow-Origin 头部
-        if ($http_origin = "order.com") {
+        if ($http_origin = "http://micro.order.16wa.com") {
             add_header Access-Control-Allow-Origin $http_origin;
         }
-        if ($http_origin = "user.com") {
+        if ($http_origin = "http://micro.user.16wa.com") {
             add_header Access-Control-Allow-Origin $http_origin;
         }
 
@@ -62,26 +62,26 @@ server {
 
 server {
     listen 80;
-    server_name order.com;
+    server_name micro.order.16wa.com;
 
     location = /favicon.ico {
-        root dist/order-app;
+        root /home/ubuntu/micro/dist/order-app;
     }
 
     # 代理 /order-app/assets 到实际文件路径
     location /order-app/assets {
-        alias dist/order-app/assets;
+        alias /home/ubuntu/micro/dist/order-app/assets;
     }
 
     location / {
-        root dist/order-app;
+        root /home/ubuntu/micro/dist/order-app;
         try_files $uri $uri/ /index.html;
 
         # 动态设置 Access-Control-Allow-Origin 头部
-        if ($http_origin = "main.com") {
+        if ($http_origin = "http://micro.main.16wa.com") {
             add_header Access-Control-Allow-Origin $http_origin;
         }
-        if ($http_origin = "user.com") {
+        if ($http_origin = "http://micro.user.16wa.com") {
             add_header Access-Control-Allow-Origin $http_origin;
         }
 
@@ -95,26 +95,26 @@ server {
 
 server {
     listen 80;
-    server_name main.com;
+    server_name micro.user.16wa.com;
 
     location = /favicon.ico {
-        root dist/user-app;
+        root /home/ubuntu/micro/dist/user-app;
     }
 
     # 代理 /order-app/assets 到实际文件路径
     location /user-app/assets {
-        alias dist/user-app/assets;
+        alias /home/ubuntu/micro/dist/user-app/assets;
     }
     
     location / {
-        root /dist/user-app;
+        root /home/ubuntu/micro/dist/user-app;
         try_files $uri $uri/ /index.html;
 
         # 动态设置 Access-Control-Allow-Origin 头部
-        if ($http_origin = "http://order.com") {
+        if ($http_origin = "http://micro.main.16wa.com") {
             add_header Access-Control-Allow-Origin $http_origin;
         }
-        if ($http_origin = "http://user.com") {
+        if ($http_origin = "http://micro.order.16wa.com") {
             add_header Access-Control-Allow-Origin $http_origin;
         }
         add_header Cache-Control "no-cache, no-store, must-revalidate";
