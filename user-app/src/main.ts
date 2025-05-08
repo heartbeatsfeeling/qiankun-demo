@@ -15,11 +15,12 @@ renderWithQiankun({
 
 // 独立运行时
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
-  setTimeout(() => {
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', () => render({}))
+  } else {
     render({})
-  })
+  }
 }
-
 // 渲染页面
 function render (props: any) {
   const { container } = props
