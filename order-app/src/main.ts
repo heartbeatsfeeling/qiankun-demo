@@ -15,7 +15,11 @@ renderWithQiankun({
 
 // 独立运行时
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
-  render({})
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', () => render({}))
+  } else {
+    render({})
+  }
 }
 
 // 渲染页面
