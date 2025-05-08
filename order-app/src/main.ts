@@ -15,9 +15,10 @@ renderWithQiankun({
 
 // 独立运行时
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
-  window.addEventListener('DOMContentLoaded', () => {
-    console.log(document.documentElement.innerHTML)
-    render({})
+  setTimeout(() => {
+    window.addEventListener('DOMContentLoaded', () => {
+      render({})
+    })
   })
 }
 
