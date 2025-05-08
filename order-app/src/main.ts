@@ -9,15 +9,15 @@ let root: App
 renderWithQiankun({
   mount (props: any) { render(props) },
   bootstrap () {},
-  unmount () { 
-    console.log('unmount')
-    root.unmount() },
+  unmount () { root.unmount() },
   update () { }
 })
 
 // 独立运行时
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
-  render({})
+  window.addEventListener('DOMContentLoaded', () => {
+    render({})
+  })
 }
 
 // 渲染页面
@@ -25,6 +25,5 @@ function render (props: any) {
   const { container } = props
   root = createApp(app)
   const dom = container ? container.querySelector('#app') : '#app'
-  console.log(document.documentElement.innerHTML)
   root.use(router).mount(dom)
 }
