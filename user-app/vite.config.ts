@@ -9,7 +9,15 @@ export default defineConfig({
     qiankun('user-app', { useDevMode: true })
   ],
   build: {
-    outDir: '../dist/user-app'
+    outDir: '../dist/user-app',
+    manifest: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
+      }
+    }
   },
   server: {
     port: 5175,
