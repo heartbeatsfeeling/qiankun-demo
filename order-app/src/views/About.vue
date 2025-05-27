@@ -1,3 +1,3 @@
 <template>
-  <iframe style="width: 80vw;;height: 100vh;" src="//www.baidu.com" frameborder="0"></iframe>
+  <iframe style="width: 80vw;;height: 100vh;" src="https://react.dev/" frameborder="0"></iframe>
 </template>
