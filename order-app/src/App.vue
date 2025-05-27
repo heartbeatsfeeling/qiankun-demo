@@ -8,7 +8,6 @@
         </div>
       </template>
       <div class="content">
-        <h2>Order</h2>
         <router-view></router-view>
       </div>
     </main>
